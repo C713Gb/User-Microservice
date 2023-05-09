@@ -25,7 +25,7 @@ public class UserController {
     }
 
     // get all users
-    @GetMapping
+    @PostMapping
     public ResponseEntity<List<User>> getAllUsers() {
         List<User> users = userService.getAllUsers();
         if (users.isEmpty()) {
@@ -35,14 +35,14 @@ public class UserController {
     }
 
     // get single user
-    @GetMapping("/{userId}")
+    @PostMapping("/{userId}")
     public ResponseEntity<User> getSingleUser(@PathVariable Long userId) {
         User user = userService.getUserById(userId);
         return ResponseEntity.ok(user);
     }
 
     // delete user
-    @DeleteMapping("/{userId}")
+    @PostMapping("/{userId}")
     public ResponseEntity<?> deleteUser(@PathVariable Long userId) {
         User user = userService.getUserById(userId);
         if (user == null) {
