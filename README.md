@@ -9,13 +9,13 @@ This is a user microservice created in Spring boot.
 #### Get all users
 
 ```http
-  POST /users
+  GET /users
 ```
 
 #### Get user by id
 
 ```http
-  POST /users/${userId}
+  GET /users/${userId}
 ```
 
 | Parameter | Type     | Description                       |
@@ -46,7 +46,7 @@ Create user with id, firstName, lastName, and email
 #### Delete user
 
 ```http
-  POST /users/${userId}
+  DELETE /users/${userId}
 ```
 
 | Parameter | Type     | Description                       |
